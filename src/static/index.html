@@ -46,35 +46,35 @@
     </footer>
 
     <script src="app.js"></script>
-    <script>
-      // ...existing code...
-      function createActivityCard(name, activity) {
-        const card = document.createElement('div');
-        card.className = 'activity-card';
-
-        // ...existing code for title, description, schedule, etc...
-
-        // Participants section
-        const participantsSection = document.createElement('div');
-        participantsSection.className = 'participants-section';
-
-        const participantsTitle = document.createElement('h4');
-        participantsTitle.textContent = 'Participants';
-        participantsSection.appendChild(participantsTitle);
-
-        const participantsList = document.createElement('ul');
-        participantsList.className = 'participants-list';
-        if (activity.participants && activity.participants.length > 0) {
-          activity.participants.forEach(email => {
-            const li = document.createElement('li');
-            li.textContent = email;
-            participantsList.appendChild(li);
-          });
-        } else {
-          const li = document.createElement('li');
-          li.textContent = 'No participants yet.';
-          participantsList.appendChild(li);
-        }
+    <style>
+      /* ...existing code... */
+      .participants-section {
+        margin-top: 1em;
+        background: #f8f9fa;
+        border-radius: 6px;
+        padding: 0.5em 1em 1em 1em;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      }
+      .participants-section h4 {
+        margin: 0.5em 0 0.5em 0;
+        font-size: 1.05em;
+        color: #2d3a4a;
+        font-weight: 600;
+      }
+      .participants-list {
+        margin: 0;
+        padding-left: 1.2em;
+        color: #495057;
+        font-size: 0.98em;
+      }
+      .participants-list li {
+        margin-bottom: 0.2em;
+        list-style-type: disc;
+      }
+      /* ...existing code... */
+    </style>
+  </body>
+</html>
         participantsSection.appendChild(participantsList);
 
         // ...existing code for signup form...
